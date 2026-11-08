@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacja</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+        
+            margin-left: 41px;
+        }
+    
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="powrot-btn">
+        <a href="index.html" class="powrot-btn">Powrot</a>
+    </div>
+        <nav class="nav">
+            <a href="artists.html" class="nav-btn">Twórcy</a>
+            <button class="kosz-btn" onclick="toggleCart()">Koszyk<span id="cart-count">0</span></button>
+        </nav>
+    </header>
+
+    <h1>Informacja o naszym sklepie</h1>
+    <p class="tekst-info-maly">Witamy w naszym sklepie internetowym!</p>
+    <div class="box">
+        <h1>kto my</h1>
+        <p>Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry. <br>
+            Lorem Ipsum has been the industry's standard<br> dummy text ever since 1966, 
+            when designers at Letraset and James Mosley,
+    </p>
+        
+    </div><br>
+    <div class="box">
+        <h1>zwroty</h1>
+        <p>There are many variations of passages of Lorem <br>Ipsum available, but the majority have suffered alteration in 
+            some form, by injected humour,  of text. </p>
+        
+    </div><br>
+    <div class="box">
+        <h1>wysylka</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed do eiusmod tempor
+             incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+             laboris nisi ut
+
+</p>
+        
+    </div><br>
+    <div class="box">
+        <h1>kontakt</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed do eiusmod tempor
+             incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+             laboris nisi ut
+
+</p>
+        
+    </div>
+
+
+
+        <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Koszyk</h3>
+            <button class="close-cart" onclick="toggleCart()"></button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-text">W koszyku pusto, wybierz produkt zeby go dodac</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Suma</span>
+                <span id="cart-total-price">0 zl</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Zloz zamowienie</button>
+        </div>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
