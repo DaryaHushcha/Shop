@@ -1,4 +1,8 @@
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('shopping_cart')) || [];
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartUI();
+});
 
 function toggleCart() {
     const cartSidebar = document.getElementById('cart-sidebar');
@@ -10,17 +14,28 @@ function toggleCart() {
 
 function addToCart(title, price) {
     cart.push({ title, price });
-    updateCartUI();
+    saveAndUpateCart(); 
     toggleCart();
 }
 
+
+function saveAndUpateCart() {
+    localStorage.setItem('shopping_cart', JSON.stringify(cart));
+    updateCartUI();
+}
+
 function updateCartUI() {
-    document.getElementById('cart-count').innerText = cart.length;
+  
+    const cartCountEl = document.getElementById('cart-count');
+    if (cartCountEl) cartCountEl.innerText = cart.length;
+
     const itemsContainer = document.getElementById('cart-items');
+    if (!itemsContainer) return; 
     
     if (cart.length === 0) {
         itemsContainer.innerHTML = `<p class="empty-cart-text">w koszyku pusto, wybierz produkt z asortymentu</p>`;
-        document.getElementById('cart-total-price').innerText = "0 zl";
+        const totalPriceEl = document.getElementById('cart-total-price');
+        if (totalPriceEl) totalPriceEl.innerText = "0 zl";
         return;
     }
 
@@ -38,12 +53,13 @@ function updateCartUI() {
         `;
     }).join('');
 
-    document.getElementById('cart-total-price').innerText = total.toLocaleString() + ' zl';
+    const totalPriceEl = document.getElementById('cart-total-price');
+    if (totalPriceEl) totalPriceEl.innerText = total.toLocaleString() + ' zl';
 }
 
 function removeFromCart(index) {
     cart.splice(index, 1);
-    updateCartUI();
+    saveAndUpateCart();
 }
 
 function checkout() {
@@ -53,6 +69,6 @@ function checkout() {
     }
     alert("Zamowienie sio udaoo!");
     cart = [];
-    updateCartUI();
+    saveAndUpateCart(); 
     toggleCart();
 }
