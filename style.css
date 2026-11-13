@@ -342,3 +342,17 @@ font-weight: 700;
     font-size: 19px;
     margin-top: 10px;
 }
+/*-------Muzycy-------------*/
+.muzycy-section{
+        padding: 20px;
+        margin-bottom: 20px;
+        margin-left:160px;
+        }
+.h1-art-wielka{
+    color: #fefefe;
+    font-size: 48px;
+        }
+.p-art{
+    color:#808992;
+    font-size: 20px;
+}
