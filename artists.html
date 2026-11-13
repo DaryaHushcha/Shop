@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Wasi ulubieni artyści muzyczni</title>
+</head>
+<body>
+    <header class="header">
+        <div class="powrot-btn">
+            <a href="index.html" class="powrot-btn">Nazwa sklepu</a>
+        </div>
+        <nav class="nav">
+            <a href="artists.html" class="nav-btn">Tworcy</a>
+            <a href="info.html" class="nav-btn">O sklepie</a>
+            <button class="kosz-btn" onclick="toggleCart()">Koszyk<span id="cart-count">0</span></button>
+        </nav>
+    </header>
+
+    <section class="muzycy-section">
+        <h1 class="h1-art-wielka">Muzycy</h1>
+        <p class="p-art">Wybierz wykonawcę, aby zobaczyć jego merch.</p>
+    </section>
+
+    <main>
+        <section class="section" style="padding-top: 0;">
+            <div class="produkt-nowosc">
+                <!-- Wykonawca 1 -->
+                <a href="muzyk1.html" class="ikonka" style="text-decoration: none; color: inherit;">
+                    <div class="ikonka-img blue">
+                        <span class="ikonka-badge">3 produkty</span>
+                    </div>
+                    <div class="ikonka-body">
+                        <div class="ikonka-title">Muzyk 1</div>
+                        <div class="ikonka-price" style="color: #8b949e; font-size: 14px; font-weight: normal;">Zobacz merch →</div>
+                    </div>
+                </a>
+
+                <!-- Wykonawca 2 -->
+                <a href="muzyk2.html" class="ikonka" style="text-decoration: none; color: inherit;">
+                    <div class="ikonka-img pink">
+                        <span class="ikonka-badge">3 produkty</span>
+                    </div>
+                    <div class="ikonka-body">
+                        <div class="ikonka-title">Muzyk 2</div>
+                        <div class="ikonka-price" style="color: #8b949e; font-size: 14px; font-weight: normal;">Zobacz merch →</div>
+                    </div>
+                </a>
+    
+                <!-- Wykonawca 3 -->
+                <a href="muzyk3.html" class="ikonka" style="text-decoration: none; color: inherit;">
+                    <div class="ikonka-img yellow">
+                        <span class="ikonka-badge">3 produkty</span>
+                    </div>
+                    <div class="ikonka-body">
+                        <div class="ikonka-title" style="color: #f8f7f7;">Muzyk 3</div>
+                        <div class="ikonka-price" style="color: #8b949e; font-size: 14px; font-weight: normal;">Zobacz merch →</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Koszyk</h3>
+            <button class="close-cart" onclick="toggleCart()">x</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-text">W koszyku pusto, wybierz produkt żeby go dodać</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Suma</span>
+                <span id="cart-total-price">0 zł</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Złóż zamówienie</button>
+        </div>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+</body>
+</html>
